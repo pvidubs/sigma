@@ -1,0 +1,1 @@
+<template>Rent View</template>
