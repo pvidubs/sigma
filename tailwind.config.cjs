@@ -34,12 +34,15 @@ module.exports = {
                     300: '#bf6b0d',
                     400: '#914a05',
                 },
-                copper: {
+                gray: {
                     100: '#dcdcdc',
                     200: '#959595',
                     300: '#595959',
                     400: '#333333',
                 },
+            },
+            backgroundImage: {
+                banner: "url('/src/assets/images/img-3.jpg')",
             },
         },
     },
