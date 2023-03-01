@@ -6,5 +6,23 @@ import Popular from '../components/Popular.vue';
 <template>
     <Banner />
     <Popular />
+    <Popular :buy="false" />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 </template>
 
