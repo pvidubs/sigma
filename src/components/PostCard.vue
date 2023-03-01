@@ -4,23 +4,10 @@ import { computed } from 'vue';
 
 const props = defineProps({
     buy: Boolean,
+    address: Object,
+    details: Object,
     price: Number,
-    bedroom: Number,
-    dininroom: Number,
-    kitchen: Number,
-    garage: Number,
-    bathroom: Number,
-    livingroom: Number,
-    garden: Number,
-    pool: Number,
-    street: String,
-    firstCorner: String,
-    secondCorner: String,
-    addressNumber: String,
-    info: String,
-    price: Number,
-    residence: String,
-    province: String,
+    contact: String,
 });
 
 const bgColor = computed(() => {
@@ -51,7 +38,27 @@ const bgColor = computed(() => {
                         />
                     </div>
                 </div>
-                <div class="w-28 h-48" :class="bgColor"></div>
+                <div
+                    class="w-28 h-48 flex flex-col text-white px-3 py-5 text-center"
+                    :class="bgColor"
+                >
+                    <div
+                        class="flex-grow flex flex-col items-center font-poppins font-extrabold mt-8"
+                    >
+                        <span class="text-3xl leading-none">CASA</span>
+                        <span
+                            class="text-sm leading-none tracking-wider"
+                            :class="buy ? 'text-blue-100' : 'text-green-100'"
+                            >EN {{ buy ? 'VENTA' : 'RENTA' }}</span
+                        >
+                    </div>
+                    <div
+                        class="flex flex-col items-center font-bahnschrift font-extralight text-xl scoped-font-condensed"
+                    >
+                        <span class="leading-none">Precio</span>
+                        <span>$ {{ price }}</span>
+                    </div>
+                </div>
             </div>
             <div class="w-44 xl:w-52 h-full absolute right-0 px-3 pt-2 pb-4 flex flex-col">
                 <div
@@ -64,29 +71,29 @@ const bgColor = computed(() => {
                         <h4>Propiedad</h4>
                     </div>
                 </div>
-
                 <div
                     class="mb-3 font-bahnschrift font-semibold text-xs leading-none text-gray-200 scoped-font-condensed scoped-font-10px"
                 >
-                    <span class="">{{ street }} #{{ addressNumber }}.</span>
+                    <span class="">{{ address.street }} #{{ address.number }}.</span>
                     <br />
-                    <span>{{ residence }}. {{ province }}.</span>
+                    <span>{{ address.residence }}. {{ address.province }}.</span>
                 </div>
-
                 <div
                     class="font-bahnschrift font-semibold grid grid-cols-4 grid-rows-2 grow gap-y-2"
                 >
-                    <div class="h-5 flex place-self-center scoped-gap">
+                    <div
+                        v-for="(value, index) in details"
+                        :key="index"
+                        class="h-5 flex place-self-center scoped-gap"
+                    >
                         <div
                             class="w-5 h-5 rounded-md"
-                            :class="bedroom > 0 ? bgColor : 'bg-gray-100'"
-                        >
-                            <PostIcon icon="bedroom" />
-                        </div>
+                            :class="value > 0 ? bgColor : 'bg-gray-100'"
+                        ></div>
                         <span
                             class="scoped-font-condensed"
-                            :class="bedroom > 0 ? 'text-gray-300' : 'text-gray-100'"
-                            >x{{ bedroom }}</span
+                            :class="value > 0 ? 'text-gray-300' : 'text-gray-100'"
+                            >x{{ value }}</span
                         >
                     </div>
                 </div>

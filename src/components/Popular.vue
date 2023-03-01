@@ -20,54 +20,69 @@ defineProps({
     >
         <PostCard
             :buy="buy"
-            street="San Gervacio"
-            address-number="324"
-            first-corner="Virtudes"
-            second-corner="Esperanza Gomez"
-            residence="Diez de Octubre"
-            province="La Habana"
-            :bedroom="2"
-            :dininroom="2"
-            :kitchen="2"
-            :garage="2"
-            :bathroom="3"
-            :livingroom="2"
-            :garden="2"
-            :pool="2"
+            :address="{
+                street: 'San Gervasio',
+                number: '324',
+                firstCorner: 'Virtudes',
+                secondCorner: 'Esperanza Gomez',
+                residence: 'Diez de Octubre',
+                province: 'La Habana',
+            }"
+            :details="{
+                bedroom: 2,
+                dininroom: 2,
+                kitchen: 2,
+                garage: 2,
+                bathroom: 3,
+                livingroom: 2,
+                garden: 2,
+                pool: 2,
+            }"
+            :price="24400"
         />
         <PostCard
             :buy="buy"
-            street="San Gervacio"
-            address-number="324"
-            first-corner="Virtudes"
-            second-corner="Esperanza Gomez"
-            residence="Diez de Octubre"
-            province="La Habana"
-            :bedroom="0"
-            :dininroom="2"
-            :kitchen="2"
-            :garage="2"
-            :bathroom="3"
-            :livingroom="2"
-            :garden="2"
-            :pool="2"
+            :address="{
+                street: 'San Gervasio',
+                number: '324',
+                firstCorner: 'Virtudes',
+                secondCorner: 'Esperanza Gomez',
+                residence: 'Diez de Octubre',
+                province: 'La Habana',
+            }"
+            :details="{
+                bedroom: 0,
+                dininroom: 2,
+                kitchen: 2,
+                garage: 2,
+                bathroom: 3,
+                livingroom: 2,
+                garden: 2,
+                pool: 2,
+            }"
+            :price="24400"
         />
         <PostCard
             :buy="buy"
-            street="San Gervacio"
-            address-number="324"
-            first-corner="Virtudes"
-            second-corner="Esperanza Gomez"
-            residence="Diez de Octubre"
-            province="La Habana"
-            :bedroom="2"
-            :dininroom="2"
-            :kitchen="2"
-            :garage="2"
-            :bathroom="3"
-            :livingroom="2"
-            :garden="2"
-            :pool="2"
+            :address="{
+                street: 'San Gervasio',
+                number: '324',
+                firstCorner: 'Virtudes',
+                secondCorner: 'Esperanza Gomez',
+                residence: 'Diez de Octubre',
+                province: 'La Habana',
+            }"
+            :details="{
+                bedroom: 3,
+                dininroom: 2,
+                kitchen: 2,
+                garage: 2,
+                bathroom: 3,
+                livingroom: 2,
+                garden: 2,
+                pool: 2,
+            }"
+            :price="24400"
         />
     </div>
     <div class="text-center mt-10 lg:mt-16 font-poppins font-extrabold text-sm lg:text-2xl">
