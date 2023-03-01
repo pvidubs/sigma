@@ -1,11 +1,9 @@
 <script setup>
 import PostIcon from './icons/PostIcon.vue';
+import { computed } from 'vue';
 
-defineProps({
-    buy: {
-        type: Boolean,
-        default: true,
-    },
+const props = defineProps({
+    buy: Boolean,
     price: Number,
     bedroom: Number,
     dininroom: Number,
@@ -24,6 +22,10 @@ defineProps({
     residence: String,
     province: String,
 });
+
+const bgColor = computed(() => {
+    return props.buy ? 'bg-sigma' : 'bg-green-300';
+});
 </script>
 
 <template>
@@ -40,7 +42,7 @@ defineProps({
                 <div class="relative mx-auto w-20 h-20">
                     <div
                         class="flex justify-center items-center absolute top-1/2 w-full h-full rounded-full"
-                        :class="`${buy ? 'bg-sigma' : 'bg-green-300'}`"
+                        :class="bgColor"
                     >
                         <img
                             src="../assets/icons/full-vertical-logo.svg"
@@ -49,10 +51,13 @@ defineProps({
                         />
                     </div>
                 </div>
-                <div class="w-28 h-48" :class="`${buy ? 'bg-sigma' : 'bg-green-300'}`"></div>
+                <div class="w-28 h-48" :class="bgColor"></div>
             </div>
-            <div class="w-44 xl:w-52 h-full absolute right-0 p-3 flex flex-col">
-                <div class="flex items-center gap-1 font-poppins font-extrabold text-sigma">
+            <div class="w-44 xl:w-52 h-full absolute right-0 px-3 pt-2 pb-4 flex flex-col">
+                <div
+                    class="flex items-center gap-1 font-poppins font-extrabold"
+                    :class="buy ? 'text-sigma' : 'text-green-300'"
+                >
                     <h3 class="tracking-wide text-2xl">SOBRE</h3>
                     <div class="text-xs leading-none">
                         <h4>La</h4>
@@ -60,68 +65,46 @@ defineProps({
                     </div>
                 </div>
 
-                <!--
-                    <div class="font-bahnschrift text-xs leading-none text-gray-300">
-                        <span class=""
-                            >{{ street }} #{{ addressNumber }} / {{ firstCorner }} y
-                            {{ secondCorner }}.</span
-                        >
-                        <br />
-                        <span>{{ residence }}. {{ province }}</span>
-                    </div>
-                -->
+                <div
+                    class="mb-3 font-bahnschrift font-semibold text-xs leading-none text-gray-200 scoped-font-condensed scoped-font-10px"
+                >
+                    <span class="">{{ street }} #{{ addressNumber }}.</span>
+                    <br />
+                    <span>{{ residence }}. {{ province }}.</span>
+                </div>
 
-                <div class="grid grid-cols-4 grid-rows-2 grow gap-y-3 gap-x-1">
-                    <div class="bg-red-600 h-5 flex place-self-center">
-                        <div class="w-5 h-5 bg-sigma">
+                <div
+                    class="font-bahnschrift font-semibold grid grid-cols-4 grid-rows-2 grow gap-y-2"
+                >
+                    <div class="h-5 flex place-self-center scoped-gap">
+                        <div
+                            class="w-5 h-5 rounded-md"
+                            :class="bedroom > 0 ? bgColor : 'bg-gray-100'"
+                        >
                             <PostIcon icon="bedroom" />
                         </div>
-                        <span>x{{ bedroom }}</span>
-                    </div>
-                    <div class="bg-red-600 h-5 flex place-self-center">
-                        <div class="w-5 h-5 bg-sigma">
-                            <PostIcon icon="dininroom" />
-                        </div>
-                        <span>x{{ dininroom }}</span>
-                    </div>
-                    <div class="bg-red-600 h-5 flex place-self-center">
-                        <div class="w-5 h-5 bg-sigma">
-                            <PostIcon icon="kitchen" />
-                        </div>
-                        <span>x{{ kitchen }}</span>
-                    </div>
-                    <div class="bg-red-600 h-5 flex place-self-center">
-                        <div class="w-5 h-5 bg-sigma">
-                            <PostIcon icon="garage" />
-                        </div>
-                        <span>x{{ garage }}</span>
-                    </div>
-                    <div class="bg-red-600 h-5 flex place-self-center">
-                        <div class="w-5 h-5 bg-sigma">
-                            <PostIcon icon="bathroom" />
-                        </div>
-                        <span>x{{ bathroom }}</span>
-                    </div>
-                    <div class="bg-red-600 h-5 flex place-self-center">
-                        <div class="w-5 h-5 bg-sigma">
-                            <PostIcon icon="livingroom" />
-                        </div>
-                        <span>x{{ livingroom }}</span>
-                    </div>
-                    <div class="bg-red-600 h-5 flex place-self-center">
-                        <div class="w-5 h-5 bg-sigma">
-                            <PostIcon icon="garden" />
-                        </div>
-                        <span>x{{ garden }}</span>
-                    </div>
-                    <div class="bg-red-600 h-5 flex place-self-center">
-                        <div class="w-5 h-5 bg-sigma">
-                            <PostIcon icon="pool" />
-                        </div>
-                        <span>x{{ pool }}</span>
+                        <span
+                            class="scoped-font-condensed"
+                            :class="bedroom > 0 ? 'text-gray-300' : 'text-gray-100'"
+                            >x{{ bedroom }}</span
+                        >
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<style scoped>
+.scoped-gap {
+    gap: 2px;
+}
+
+.scoped-font-condensed {
+    font-stretch: condensed;
+}
+
+.scoped-font-10px {
+    font-size: 12px;
+}
+</style>

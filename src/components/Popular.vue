@@ -4,10 +4,7 @@ import LeadInfo from './LeadInfo.vue';
 import PostCard from './PostCard.vue';
 
 defineProps({
-    buy: {
-        type: Boolean,
-        default: true,
-    },
+    buy: Boolean,
 });
 </script>
 
@@ -29,14 +26,14 @@ defineProps({
             second-corner="Esperanza Gomez"
             residence="Diez de Octubre"
             province="La Habana"
-            bedroom="2"
-            dininroom="2"
-            kitchen="2"
-            garage="2"
-            bathroom="3"
-            livingroom="2"
-            garden="2"
-            pool="2"
+            :bedroom="2"
+            :dininroom="2"
+            :kitchen="2"
+            :garage="2"
+            :bathroom="3"
+            :livingroom="2"
+            :garden="2"
+            :pool="2"
         />
         <PostCard
             :buy="buy"
@@ -46,14 +43,14 @@ defineProps({
             second-corner="Esperanza Gomez"
             residence="Diez de Octubre"
             province="La Habana"
-            bedroom="2"
-            dininroom="2"
-            kitchen="2"
-            garage="2"
-            bathroom="3"
-            livingroom="2"
-            garden="2"
-            pool="2"
+            :bedroom="0"
+            :dininroom="2"
+            :kitchen="2"
+            :garage="2"
+            :bathroom="3"
+            :livingroom="2"
+            :garden="2"
+            :pool="2"
         />
         <PostCard
             :buy="buy"
@@ -63,14 +60,14 @@ defineProps({
             second-corner="Esperanza Gomez"
             residence="Diez de Octubre"
             province="La Habana"
-            bedroom="2"
-            dininroom="2"
-            kitchen="2"
-            garage="2"
-            bathroom="3"
-            livingroom="2"
-            garden="2"
-            pool="2"
+            :bedroom="2"
+            :dininroom="2"
+            :kitchen="2"
+            :garage="2"
+            :bathroom="3"
+            :livingroom="2"
+            :garden="2"
+            :pool="2"
         />
     </div>
     <div class="text-center mt-10 lg:mt-16 font-poppins font-extrabold text-sm lg:text-2xl">
