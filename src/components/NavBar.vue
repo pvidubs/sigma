@@ -42,10 +42,10 @@ const menuInteraction = () => {
             v-if="!hiddenMenu"
         />
         <nav class="space-x-7 hidden lg:flex">
-            <RouterLink to="/buy" class="text-white">Comprar</RouterLink>
-            <RouterLink to="/rent" class="text-white">Rentar</RouterLink>
-            <RouterLink to="/sell" class="text-white">Vender</RouterLink>
-            <RouterLink to="/help" class="text-white">Ayuda</RouterLink>
+            <RouterLink to="/buy" class="text-white hover:underline">Comprar</RouterLink>
+            <RouterLink to="/rent" class="text-white hover:underline">Rentar</RouterLink>
+            <RouterLink to="/sell" class="text-white hover:underline">Vender</RouterLink>
+            <RouterLink to="/help" class="text-white hover:underline">Ayuda</RouterLink>
             <RouterLink to="/login">
                 <UserCta message="Iniciar Sesión" />
             </RouterLink>

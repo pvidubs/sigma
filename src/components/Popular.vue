@@ -18,72 +18,78 @@ defineProps({
     <div
         class="flex flex-col lg:flex-row items-center justify-evenly xl:justify-center gap-7 xl:gap-10 lg:px-14"
     >
-        <PostCard
-            :buy="buy"
-            :address="{
-                street: 'San Gervasio',
-                number: '324',
-                firstCorner: 'Virtudes',
-                secondCorner: 'Esperanza Gomez',
-                residence: 'Diez de Octubre',
-                province: 'La Habana',
-            }"
-            :details="{
-                bedroom: 2,
-                dininroom: 2,
-                kitchen: 2,
-                garage: 2,
-                bathroom: 3,
-                livingroom: 2,
-                garden: 2,
-                pool: 2,
-            }"
-            :price="24400"
-        />
-        <PostCard
-            :buy="buy"
-            :address="{
-                street: 'San Gervasio',
-                number: '324',
-                firstCorner: 'Virtudes',
-                secondCorner: 'Esperanza Gomez',
-                residence: 'Diez de Octubre',
-                province: 'La Habana',
-            }"
-            :details="{
-                bedroom: 0,
-                dininroom: 2,
-                kitchen: 2,
-                garage: 2,
-                bathroom: 3,
-                livingroom: 2,
-                garden: 2,
-                pool: 2,
-            }"
-            :price="24400"
-        />
-        <PostCard
-            :buy="buy"
-            :address="{
-                street: 'San Gervasio',
-                number: '324',
-                firstCorner: 'Virtudes',
-                secondCorner: 'Esperanza Gomez',
-                residence: 'Diez de Octubre',
-                province: 'La Habana',
-            }"
-            :details="{
-                bedroom: 3,
-                dininroom: 2,
-                kitchen: 2,
-                garage: 2,
-                bathroom: 3,
-                livingroom: 2,
-                garden: 2,
-                pool: 2,
-            }"
-            :price="24400"
-        />
+        <RouterLink to="/post">
+            <PostCard
+                :buy="buy"
+                :address="{
+                    street: 'San Gervasio',
+                    number: '324',
+                    firstCorner: 'Virtudes',
+                    secondCorner: 'Esperanza Gomez',
+                    residence: 'Diez de Octubre',
+                    province: 'La Habana',
+                }"
+                :details="{
+                    bedroom: 2,
+                    dininroom: 2,
+                    kitchen: 2,
+                    garage: 2,
+                    bathroom: 3,
+                    livingroom: 2,
+                    garden: 2,
+                    pool: 2,
+                }"
+                :price="24400"
+            />
+        </RouterLink>
+        <RouterLink to="/post">
+            <PostCard
+                :buy="buy"
+                :address="{
+                    street: 'San Gervasio',
+                    number: '324',
+                    firstCorner: 'Virtudes',
+                    secondCorner: 'Esperanza Gomez',
+                    residence: 'Diez de Octubre',
+                    province: 'La Habana',
+                }"
+                :details="{
+                    bedroom: 0,
+                    dininroom: 2,
+                    kitchen: 2,
+                    garage: 2,
+                    bathroom: 3,
+                    livingroom: 2,
+                    garden: 2,
+                    pool: 2,
+                }"
+                :price="24400"
+            />
+        </RouterLink>
+        <RouterLink to="/post">
+            <PostCard
+                :buy="buy"
+                :address="{
+                    street: 'San Gervasio',
+                    number: '324',
+                    firstCorner: 'Virtudes',
+                    secondCorner: 'Esperanza Gomez',
+                    residence: 'Diez de Octubre',
+                    province: 'La Habana',
+                }"
+                :details="{
+                    bedroom: 3,
+                    dininroom: 2,
+                    kitchen: 2,
+                    garage: 2,
+                    bathroom: 3,
+                    livingroom: 2,
+                    garden: 2,
+                    pool: 2,
+                }"
+                :price="24400"
+            />
+        </RouterLink>
     </div>
     <div class="text-center mt-10 lg:mt-16 font-poppins font-extrabold text-sm lg:text-2xl">
         <RouterLink :to="buy ? '/buy' : '/rent'" class="hover:underline active:underline"

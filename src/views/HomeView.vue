@@ -4,25 +4,14 @@ import Popular from '../components/Popular.vue';
 </script>
 
 <template>
-    <Banner />
-    <Popular buy />
-    <Popular />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    <section>
+        <Banner />
+    </section>
+    <section>
+        <Popular buy />
+    </section>
+    <section class="pb-14 lg:pb-20">
+        <Popular />
+    </section>
 </template>
 
