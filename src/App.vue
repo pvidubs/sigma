@@ -11,8 +11,8 @@ import FooterSection from "./components/FooterSection.vue";
   <main>
     <RouterView />
   </main>
-  <!-- <footer>
+  <footer>
     <FooterSection />
-  </footer> -->
+  </footer>
 </template>
 
